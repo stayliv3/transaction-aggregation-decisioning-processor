@@ -1,3 +1,4 @@
+RUN npm config set registry http://registry.npmjs.org/
 ARG BUILD_IMAGE=node:20-bullseye
 ARG RUN_IMAGE=gcr.io/distroless/nodejs20-debian11:nonroot
 
