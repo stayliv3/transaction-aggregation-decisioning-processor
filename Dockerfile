@@ -1,4 +1,3 @@
-RUN npm config set registry http://registry.npmjs.org/
 ARG BUILD_IMAGE=node:20-bullseye
 ARG RUN_IMAGE=gcr.io/distroless/nodejs20-debian11:nonroot
 
@@ -12,6 +11,7 @@ COPY ./package*.json ./
 COPY ./tsconfig.json ./
 COPY .npmrc ./
 ARG GH_TOKEN
+RUN npm config set registry http://registry.npmjs.org/
 
 RUN npm ci --ignore-scripts
 RUN npm run build
